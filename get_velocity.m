@@ -3,7 +3,7 @@ function [root] = get_velocity(a, lm, lt)
 % Input Parameters
 % a: activation (between 0 and 1)
 % lm: normalized length of muscle (contractile element)
-%  lt: normalized length of tendon (series elastic element)
+% lt: normalized length of tendon (series elastic element)
 
 % Output
 % root: normalized lengthening velocity of muscle (contractile element)
@@ -13,6 +13,8 @@ beta = 0.1;
 
 % WRITE CODE HERE TO CALCULATE VELOCITY
 
+hill_func = a*force_length_muscle(lm)*force_velocity_muscle(lm) + beta*v - force_length_tendon(lt)
+fzero(hill_func, 0)
 
 end
 
