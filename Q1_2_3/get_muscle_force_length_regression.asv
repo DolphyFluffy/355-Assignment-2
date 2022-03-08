@@ -166,10 +166,8 @@ data = [37.38255033557047, 9.487179487179489
     68.32214765100672, 59.48717948717949];
 
 % Normalization
-length = normalize(data(:,1));
-force = normalize(data(:,2));
-
+length = data(:,1);
+force = data(:.
 % Regression with "fit" function with "gauss2" option as model type
-force_length_regression = fit(length, force, 'gauss2');
 
 end
