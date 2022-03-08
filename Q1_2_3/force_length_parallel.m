@@ -9,4 +9,8 @@ function [normalize_PE_force] = force_length_parallel(lm)
 
 % WRITE YOUR CODE HERE
 
+lpes = 1;
+normalize_PE_force = pw(lm < lpes, 0, lm >= lpes, (3*((lm-lpes).^2))/(0.6+lm-lpes));
+
+
 end
