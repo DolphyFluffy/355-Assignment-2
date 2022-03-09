@@ -13,7 +13,7 @@ function [force_length_regression] = get_muscle_force_length_regression()
 %     from Winters et al. (2011) Figure 2C, which is on Learn. Click
 %     "View Data", select all, cut, and paste below. 
 %     2) Normalize the data so optimal length = 1 and peak = 1. 
-%     3) Return a Regression object that  uses Gaussian basis functions.
+%     3) Return a Regression object that uses Gaussian basis functions.
 
 % Define data points
 data = [37.38255033557047, 9.487179487179489
@@ -165,11 +165,14 @@ data = [37.38255033557047, 9.487179487179489
     67.71812080536913, 62.56410256410257
     68.32214765100672, 59.48717948717949];
 
+length = data(:,1);
+force = data(:,2);
+
 % Normalization
-length = normalize(data(:,1));
-force = normalize(data(:,2));
+x = length/max(length);
+y = force/max(force);
 
 % Regression with "fit" function with "gauss2" option as model type
-force_length_regression = fit(length, force, 'gauss2');
+force_length_regression = fit(x, y, 'gauss2');
 
 end
