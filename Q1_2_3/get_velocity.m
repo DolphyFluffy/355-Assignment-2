@@ -13,8 +13,8 @@ beta = 0.1;
 
 % WRITE CODE HERE TO CALCULATE VELOCITY
 
-hill_func = a*force_length_muscle(lm)*force_velocity_muscle(lm) + beta*v - force_length_tendon(lt)
-fzero(hill_func, 0)
+hill_func = a*force_length_muscle(lm)*force_velocity_muscle(lm) + beta*v - force_length_tendon(lt);
+root = fzero(hill_func, 0);
 
 end
 
