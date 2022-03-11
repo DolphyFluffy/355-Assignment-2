@@ -12,9 +12,11 @@ function [root] = get_velocity(a, lm, lt)
 beta = 0.1;
 
 % WRITE CODE HERE TO CALCULATE VELOCITY
+function h = hill_func(v)
+    h = a*force_length_muscle(lm)*force_velocity_muscle(v) + beta*v - force_length_tendon(lt);
+end
 
-hill_func = a*force_length_muscle(lm)*force_velocity_muscle(lm) + beta*v - force_length_tendon(lt);
-root = fzero(hill_func, 0);
+root = fzero(@hill_func, 0);
 
 end
 

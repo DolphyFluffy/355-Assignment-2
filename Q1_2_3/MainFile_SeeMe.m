@@ -21,6 +21,7 @@ a = 1;
 lm = 1;
 lt = 1.01;
 velocity = get_velocity(a, lm, lt);
+% velocity = -0.2707
 
 %% Section 4: Question 3:
 clc
