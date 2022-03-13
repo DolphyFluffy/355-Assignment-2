@@ -26,7 +26,7 @@ function simulate(T, f0M, resting_length_muscle, resting_length_tendon, RelTol, 
     %%% TASK 3
     % the outputs of ode45 must be named "time" and "norm_lm"
     options = odeset('RelTol', RelTol, 'AbsTol', AbsTol);
-    [time, norm_lm] = ode45(@velocity_of_muscle, [0 T], 1, options);
+    [time, norm_lm] = ode45(@velocity_of_muscle, [0 T], 1, options)
     
     %%% TASK 4
     % save the estimated forces in a vector called "forces"

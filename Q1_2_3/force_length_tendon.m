@@ -1,5 +1,5 @@
 function [normalize_tendon_tension] = force_length_tendon(lt)
-    %%%% TASK 1
+    %%%% TAKS 1
     
     % Input Parameters
     % lt: normalized length of tendon (series elastic element)
@@ -12,7 +12,7 @@ function [normalize_tendon_tension] = force_length_tendon(lt)
     normalize_tendon_tension = zeros(size(lt)); % This preallocates the space for speed
     
     for i = 1:size(lt,2)
-        if i < 100
+        if lt(i) < lts
             normalize_tendon_tension(i) = 0;
         else
             normalize_tendon_tension(i) = 10*(lt(i)-lts)+240*((lt(i)-lts)^2);
